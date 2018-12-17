@@ -1,6 +1,11 @@
 var path = require('path');
 
 module.exports = {
+
+    optimization: {
+        minimize: false
+    },
+
     entry: './src/imgix-core-js.js',
     output: {
         libraryTarget: "umd",
@@ -13,7 +18,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js?$/,
-                exclude: /node_modules/,
+                // exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
                     presets: ["@babel/preset-env"]
